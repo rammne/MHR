@@ -1,0 +1,9 @@
+{% extends 'MHR/base.html' %}
+{% block content %}
+    <h1>Patient List</h1>
+    <div class="list-group">
+        {% for patient in patients %}
+            <a href="{% url 'patient_details' patient.id %}" class="list-group-item list-group-item-action">{{ patient.first_name }}</a>
+        {% endfor %}
+    </div>
+{% endblock content %}

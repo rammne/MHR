@@ -1,0 +1,22 @@
+{% extends 'MHR/base.html' %}
+{% block content %}
+    <h1 class="text-center mt-5">Patient Details</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <!---<div class="col-md-4 text-center">
+                <img src="{{ patient.photo }}" alt="{{ patient.first_name }}" class="img-fluid rounded-circle">
+            </div>--->
+            <div class="col-md-8">
+                <h1 class="text-primary mb-3">{{ patient.first_name }} {{ patient.middle_name }} {{ patient.last_name }} </h1>
+                <p>{{ patient.date_of_birth }}</p>
+                <p class="text-secondary mb-0">{{ patient.patient_address }}</p>
+                <p>{{ patient.patient_contact }}</p>
+                <h1>{{ patient.guardian }}</h1>
+                <p>{{ patient.guardian_address }}</p>
+                <p>{{ patient.guardian_telephone }}</p>
+                <a href="{% url 'update_detail' patient.id %}">Update</a>
+                <a href="{% url 'delete_patient' patient.id %}">Delete</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
